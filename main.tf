@@ -10,11 +10,11 @@ resource "aws_security_group" "alb_sg" {
   vpc_id = var.vpc_id
 
   tags = {
-    Application = "${var.app_name}"
-    Billing     = "${var.environment}"
-    Environment = "${var.environment}"
+    Application = var.app_name
+    Billing     = var.environment
+    Environment = var.environment
     Name        = "${var.environment}-${var.app_name}-alb-sg"
-    Terraform   = "true"
+    Terraform   = true
   }
 }
 
@@ -85,10 +85,10 @@ resource "aws_lb" "alb" {
   }
 
   tags = {
-    Application = "${var.app_name}"
+    Application = var.app_name
     Billing     = "${var.environment}-${var.app_name}"
-    Environment = "${var.environment}"
+    Environment = var.environment
     Name        = "${var.environment}-${var.app_name}-alb"
-    Terraform   = "true"
+    Terraform   = true
   }
 }
