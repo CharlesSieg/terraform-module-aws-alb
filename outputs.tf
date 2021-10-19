@@ -1,24 +1,24 @@
-output "alb_id" {
-  description = "The ID of the Application Load Balancer."
-  value       = aws_lb.alb.id
-}
-
-output "alb_arn" {
+output "arn" {
   description = "The ARN of the Application Load Balancer."
-  value       = aws_lb.alb.arn
+  value       = aws_lb.main.arn
 }
 
 output "dns_name" {
   description = "The DNS name of the Application Load Balancer."
-  value       = aws_lb.alb.dns_name
+  value       = aws_lb.main.dns_name
+}
+
+output "id" {
+  description = "The ID of the Application Load Balancer."
+  value       = aws_lb.main.id
 }
 
 output "sg_id" {
   description = "The ID of the security group which controls traffic to and from instances."
-  value       = aws_security_group.alb_sg.id
+  value       = aws_security_group.alb.id
 }
 
 output "zone_id" {
   description = "The canonical hosted zone ID of the load balancer (to be used in a Route 53 Alias record)."
-  value       = aws_lb.alb.zone_id
+  value       = aws_lb.main.zone_id
 }
