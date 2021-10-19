@@ -8,7 +8,7 @@ resource "aws_lb" "alb" {
   enable_deletion_protection       = false
   internal                         = false
   name                             = "${var.environment}-${var.app_name}-alb"
-  security_groups                  = [aws_security_group.alb_sg.id]
+  security_groups                  = [aws_security_group.alb.id]
   subnets                          = var.public_subnets
 
   access_logs {
